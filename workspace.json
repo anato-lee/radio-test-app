@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "radio-app": "apps/radio-app",
+    "radio-app-e2e": "apps/radio-app-e2e"
+  }
+}
