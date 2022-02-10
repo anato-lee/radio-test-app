@@ -1,0 +1,23 @@
+{
+  "root": "libs/radio-lib",
+  "sourceRoot": "libs/radio-lib/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/radio-lib/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/radio-lib"],
+      "options": {
+        "jestConfig": "libs/radio-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

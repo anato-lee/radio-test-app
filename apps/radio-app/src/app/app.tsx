@@ -1,12 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+
+import { RadioStationPlayer } from '@libs/radio';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="radio-app" />
-      <div />
+    <div/>
+      <RadioStationPlayer/>
     </>
   );
 }
