@@ -1,25 +1,29 @@
 import { IStation } from '../interfaces';
 
-export function StationInfo(props: IStation) {
+export interface IStationInfo {
+  data: IStation;
+}
+
+export function StationInfo({ data: { name, imgUrl, description, popularity, reliability, tags } }: IStationInfo) {
   return (<article>
-    <img src={ props.imgUrl } alt={ props.name }/>
-    <header>{ props.name }</header>
+    <img src={ imgUrl } alt={ name }/>
+    <header>{ name }</header>
 
     <details>
       <summary>Details</summary>
-      <span>{ props.description }</span>
+      <span>{ description }</span>
     </details>
 
     <footer>
       <dl>
         <dt>Popularity</dt>
-        <dd>{ props.popularity }</dd>
+        <dd>{ popularity }</dd>
 
         <dt>Reliability</dt>
-        <dd>{ props.reliability }</dd>
+        <dd>{ reliability }</dd>
 
         <dt>Tags</dt>
-        <dd>{ props.tags }</dd>
+        <dd>{ tags.map(t => (<span>{ t }</span>)) }</dd>
       </dl>
     </footer>
   </article>);

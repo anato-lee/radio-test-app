@@ -29,13 +29,14 @@ type ISortableProps = {
 }
 
 interface IStationListState {
-  stationList: IStation[];
+  stations: IStation[];
   sortBy?: ISortableProps;
   filterBy?: IFilterableProps;
 }
 
 export interface IStationListAction {
   type: STATION_LIST_ACTIONS;
+  // TODO:
   payload?: any;
 }
 
@@ -77,14 +78,14 @@ export interface IUseStationList {
 
 export const useStationList = (): IUseStationList => {
   const [defaultStations, setDefaultStations] = useState<IStation[]>([]);
-  const init = () => ({ stationList: defaultStations });
+  const init = () => ({ stations: defaultStations });
   const reducer = reducerFactory(init);
-  const [stationList, dispatch] = useReducer<TStationsReducer, IStationListState>(reducer, { stationList: [] }, init);
+  const [stationList, dispatch] = useReducer<TStationsReducer, IStationListState>(reducer, { stations: [] }, init);
   const setStations = (stations: IStation[]) => {
     setDefaultStations(stations);
     dispatch({ type: STATION_LIST_ACTIONS.reset })
   }
-  const getStations = getStationsFactory(setDefaultStations);
+  const getStations = getStationsFactory(setStations);
 
   useEffect(() => {
     getStations();
