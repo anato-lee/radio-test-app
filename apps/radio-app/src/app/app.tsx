@@ -4,12 +4,7 @@ import styles from './app.module.scss';
 import { RadioStationPlayer } from '@libs/radio';
 
 export function App() {
-  return (
-    <>
-    <div/>
-      <RadioStationPlayer/>
-    </>
-  );
+  return (<RadioStationPlayer/>);
 }
 
 export default App;

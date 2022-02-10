@@ -13,11 +13,19 @@ export function StationsList() {
   }
 
   return (
-    <ul>
+    <ul className='min-w-full'>
      { stationList.stations.map(data => (
-        <li>
-          <StationInfo data={ data } />
-          <button onClick={ () => { selectCurrentStation(data); } }>Play</button>
+        <li className='border-b-2 border-x-gray-700'>
+          <div className='m-2 border-box grid grid-cols-8'>
+            <div className='col-span-6'>
+              <StationInfo data={ data } />
+            </div>
+            <div className='col-span-2 flex flex-col justify-center'>
+              <button
+                className='p-2 border-box rounded-full bg-sky-600 text-sm font-bold text-white self-center'
+                onClick={ () => { selectCurrentStation(data); } }>Play &#9658;</button>
+              </div>
+          </div>
         </li>
        )) }
     </ul>

@@ -3,5 +3,5 @@ export interface RadioPlayerProps {
 }
 
 export function AudioPlayer(props: RadioPlayerProps) {
-  return (<audio src={props.src} autoPlay={true} controls={true}/>);
+  return (<audio className='block w-48'  src={props.src} autoPlay={true} controls={true}/>);
 }
