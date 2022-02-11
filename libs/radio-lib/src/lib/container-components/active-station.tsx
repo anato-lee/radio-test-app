@@ -7,13 +7,12 @@ export function ActiveStation() {
   const { station } = useContext(SelectedStationContext);
 
   return !station?.name ?
-   (<h1>Please select station</h1>) :
+   (<h2>Please select station</h2>) :
    (<article className='grid grid-cols-8'>
-      <div className='col-span-2'>
+      <div className='col-span-6 m-4'>
         <AudioPlayer src={ station.streamUrl }/>
       </div>
-      <h1 className='col-span-6 text-3xl font-semibold'>{ `Now playing ${station.name.toUpperCase()}` }</h1>
-      <div className='col-span-8'>
+      <div className='col-span-8 m-4'>
         <StationInfo data={ station } ></StationInfo>
       </div>
     </article>);

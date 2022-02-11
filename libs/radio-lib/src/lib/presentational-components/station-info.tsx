@@ -4,7 +4,7 @@ export interface IStationInfo {
   data: IStation;
 }
 
-export function StationInfo({ data: { name, imgUrl, description, popularity, reliability, tags } }: IStationInfo) {
+export function StationInfo({ data: { name, imgUrl, description, popularity, reliability, tags, id } }: IStationInfo) {
   return (<article className='grid grid-cols-5 gap-2'>
     <img className='w-16 h-16 rounded-md col-span-1' src={ imgUrl } alt={ name }/>
 
@@ -26,7 +26,7 @@ export function StationInfo({ data: { name, imgUrl, description, popularity, rel
 
         <div  className='flex col-span-2 gap-2'>
           <dt>Tags:</dt>
-          <dd>{ tags.map(t => (<span className='border-box px-1 bg-slate-300 mx-1 rounded-md'>{ t }</span>)) }</dd>
+          <dd>{ tags.map(t => (<span key={ `${id}-${t}` } className='border-box px-1 bg-slate-300 mx-1 rounded-md'>{ t }</span>)) }</dd>
         </div>
       </dl>
     </footer>

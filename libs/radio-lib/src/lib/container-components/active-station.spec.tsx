@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ActiveStation from './active-station';
+import { ActiveStation } from './active-station';
 
 describe('ActiveStation', () => {
   it('should render successfully', () => {
